@@ -4,12 +4,16 @@ from collections import Counter
 text_file = open(sys.argv[1])
 text_file = text_file.read()
 text_file = text_file.lower()
+
 for c in text_file:
     if c in "?.!/;:,'\"_":
         text_file = text_file.replace(c, "")
+
 words = text_file.split()
+
 word_count = Counter(words)
-for word, count in word_count.items():
+
+for word, count in sorted(word_count.items()):
     print word, count
 
 
