@@ -13,8 +13,13 @@ words = text_file.split()
 
 word_count = Counter(words)
 
+swap_word_count = {}
+
 for word, count in sorted(word_count.items()):
-    print word, count
+    #print word, count
+    #print swap_word_count.get(count, [])
+    swap_word_count[count] = swap_word_count.get(count, []) + [word]
+print swap_word_count
 
 
 # word_count = {}
